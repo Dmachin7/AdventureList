@@ -6,6 +6,8 @@ const app = express()
 const session = require('express-session')
 const bcrypt = require('bcrypt')
 
+app.use(express.static('public'))
+
 require('dotenv').config()
 
 const PORT = process.env.PORT || 3000
