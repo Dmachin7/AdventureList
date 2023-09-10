@@ -43,7 +43,7 @@ app.use('/user', userController)
 app.use('/bucketlist', bucketsController)
 
 app.get('/', (req, res) => {
-   res.send('Hello world!')
+   res.render('login.ejs')
 })
 
 app.listen(PORT, () => {

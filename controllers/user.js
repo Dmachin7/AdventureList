@@ -34,7 +34,6 @@ router.post('/', async (req, res) => {
         if(isAMatch) {
           console.log('login successful')
           req.session.currentUser = foundUser
-          res.redirect('/fruits')
         } else {
           res.status(500).send('Username or password does not match or does not exist.')
         }
