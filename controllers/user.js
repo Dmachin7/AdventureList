@@ -8,7 +8,7 @@ router.get('/', (req,res) => {
 })
 
 router.get('/login', (req,res) => {
-    res.render(login.ejs)
+    res.render('login.ejs')
 })
 
 router.post('/', async (req, res) => {
@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
       console.log('after hash: ', req.body)
       const newUser = await User.create(req.body)
       req.session.currentUser = newUser
-      res.redirect('/login')
+      res.redirect('/bucketlist')
     } catch (err) {
       console.log(err)
       res.status(500).send('Please try a different username or password.')
@@ -34,6 +34,7 @@ router.post('/', async (req, res) => {
         if(isAMatch) {
           console.log('login successful')
           req.session.currentUser = foundUser
+          res.redirect('/bucketlist')
         } else {
           res.status(500).send('Username or password does not match or does not exist.')
         }
@@ -44,6 +45,17 @@ router.post('/', async (req, res) => {
       console.log(err)
       res.status(500).send('Username or password does not match or does not exist.')
     }
+  })
+
+  router.delete('/logout', (req,res) => {
+    req.session.destroy(err => {
+        if(err) {
+            console.log(err, " logout failed")
+            res.status(500).res.send('Logout Failed, please try again')
+        } else {
+            res.redirect('/user/login')
+        }
+    })
   })
 
 module.exports = router

@@ -45,7 +45,7 @@ app.use('/user', userController)
 app.use('/bucketlist', bucketsController)
 
 app.get('/', (req, res) => {
-   res.render('login.ejs')
+   res.render('index.ejs')
 })
 
 app.listen(PORT, () => {
