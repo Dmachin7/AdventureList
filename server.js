@@ -12,13 +12,11 @@ require('dotenv').config()
 
 const PORT = process.env.PORT || 3000
 
-const secret = "Shadow3264"
-
 app.use(express.urlencoded({ extended: true}))
 app.use(methodOverride('_method'))
 app.use(
     session({
-        secret: secret,
+        secret: process.env.SECRET,
         resave: false,
         saveUninitialized: false
     })
