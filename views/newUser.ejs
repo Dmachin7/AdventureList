@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdventureList</title>
+  <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-  <h1>Create an Account</h1>
+<div class="login-container">
+  
+  <div class="login">
+  <h1 class="login-title">Create an Account</h1>
+
 
   <form action="/user/" method="POST">
-    <input type="text" placeholder="Username" name="username"/>
-    <input type="password" placeholder="Password" name="password"/>
-    <input type="submit" value="Create Account" />
+    <input class="username" type="text" placeholder="Username" name="username"/>
+    <input class="password" type="password" placeholder="Password" name="password"/>
+    <input class="submit-btn" type="submit" value="Create Account" />
   </form>
-  <a href="/user/login">Login</a>
-
-  
+  <a class="submit-btn" href="/user/login">Login</a>
+ </div>
+</div>
 </body>
 </html>
