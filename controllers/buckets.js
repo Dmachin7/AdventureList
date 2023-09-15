@@ -7,6 +7,10 @@ router.get('/', (req,res) => {
     res.render('index.ejs')
 })
 
+router.get('/new', (req,res) => {
+    res.render('new.ejs')
+})
+
 router.get('/list', (req,res) => {
     res.render('blog.ejs')
 })
