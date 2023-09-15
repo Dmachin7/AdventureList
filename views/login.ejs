@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+<div class="login-container">
+
+  <div class="login">
     <h1 class="login-title">Login</h1>
-
     <form action="/user/login/" method="POST">
-      <input type="text" placeholder="Username" name="username"/>
-      <input type="password" placeholder="Password" name="password"/>
-      <input type="submit" value="Login" />
+      <input class="username" type="text" placeholder="Username" name="username" autocomplete="off"/>
+      <input class="password" type="password" placeholder="Password" name="password"/>
+      <input class="submit-btn" type="submit" value="Login" />
     </form>
-
-    <a href="/user/">Create An Account</a>
+    <a class="submit-btn" href="/user/">Create An Account</a>
+  </div>
+  
+</div>
 
 </body>
 </html>

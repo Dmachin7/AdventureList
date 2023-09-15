@@ -13,12 +13,10 @@ router.get('/login', (req,res) => {
 
 router.post('/', async (req, res) => {
     try {
-      console.log('before hash: ', req.body)
       req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
-      console.log('after hash: ', req.body)
       const newUser = await User.create(req.body)
       req.session.currentUser = newUser
-      res.redirect('/bucketlist')
+      res.redirect('/bucketlist/list')
     } catch (err) {
       console.log(err)
       res.status(500).send('Please try a different username or password.')
@@ -34,7 +32,7 @@ router.post('/', async (req, res) => {
         if(isAMatch) {
           console.log('login successful')
           req.session.currentUser = foundUser
-          res.redirect('/bucketlist')
+          res.redirect('/bucketlist/list')
         } else {
           res.status(500).send('Username or password does not match or does not exist.')
         }
@@ -53,7 +51,8 @@ router.post('/', async (req, res) => {
             console.log(err, " logout failed")
             res.status(500).res.send('Logout Failed, please try again')
         } else {
-            res.redirect('/user/login')
+          console.log("Succesfully Logged Out")
+            res.redirect('/bucketlist')
         }
     })
   })

@@ -7,4 +7,8 @@ router.get('/', (req,res) => {
     res.render('index.ejs')
 })
 
+router.get('/list', (req,res) => {
+    res.render('blog.ejs')
+})
+
 module.exports = router
