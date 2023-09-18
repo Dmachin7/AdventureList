@@ -2,18 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 const BucketList = require('../models/buckets')
+const session = require('express-session')
 
 router.get('/list', async (req,res) => {
-
-    // let foundList = await BucketList.find({})
-    // for(let i = 0; i > foundList.length; i++) {
-    //     if(req.session.username.username !== foundList[i].owner) {
-    //         console.log("It Worked")
-    //     } else {
-    //         console.log("It didnt work")
-    //     }
-    // }
-    // res.render('blog.ejs', { Bucket: foundList, BucketList: BucketList})
     try {
         const sessionUsername = req.session.username.username
         console.log(sessionUsername)
@@ -38,10 +29,13 @@ router.get('/new', (req,res) => {
 
 router.post('/list', async (req,res) => {
     try {
+        const sessionUsername = req.session.username.username
         console.log(req.session)
         console.log(req.body)
-        // const newItem = await BucketList.create(req.body)
-        // console.log(newItem)
+        req.body.owner = sessionUsername
+        const newItem = await BucketList.create(req.body)
+        console.log(newItem)
+        req.session.username.username = sessionUsername
         res.redirect('/bucketlist/list')
     } catch (err) {
         console.log(err)
