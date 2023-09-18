@@ -40,17 +40,17 @@ db.on('disconnected', () => { console.log('mongo disconnected')})
 const userController = require('./controllers/user.js')
 const bucketsController = require('./controllers/buckets.js')
 
-const isAuthenticated = (req, res, next) => {
-    if(req.session.currentUser) {
-        next()
-    } else {
-        res.redirect('/user/login')
-    }
-}
+// const isAuthenticated = (req, res, next) => {
+//     if(req.session.currentUser) {
+//         next()
+//     } else {
+//         res.redirect('/user/login')
+//     }
+// }
 
 app.use('/user', userController)
 
-app.use(isAuthenticated)
+// app.use(isAuthenticated)
 
 app.use('/bucketlist', bucketsController)
 

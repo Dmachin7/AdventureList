@@ -1,8 +1,8 @@
 const BucketList = require('./models/buckets')
 const mongoose = require('mongoose')
+require('dotenv').config()
 
-const mongoURI = "mongodb+srv://Danieltayg:Shadow3264@danielsparadise.bnyuvcu.mongodb.net/?retryWrites=true&w=majority"
-const db = mongoose.connection
+const mongoURI = process.env.MONGO_URI
 
 mongoose.connect(mongoURI)
 

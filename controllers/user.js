@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
         const isAMatch = bcrypt.compareSync(req.body.password, foundUser.password)
         if(isAMatch) {
           console.log('login successful')
-          req.session.currentUser = foundUser
+          req.session.username = foundUser
           res.redirect('/bucketlist/list')
         } else {
           res.status(500).send('Username or password does not match or does not exist.')
