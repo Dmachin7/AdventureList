@@ -16,7 +16,7 @@ router.get('/list', async (req,res) => {
     // res.render('blog.ejs', { Bucket: foundList, BucketList: BucketList})
     try {
         const sessionUsername = req.session.username.username
-
+        console.log(sessionUsername)
         const foundList = await BucketList.find({})
 
         const filteredList = foundList.filter((item) => item.owner === sessionUsername)
