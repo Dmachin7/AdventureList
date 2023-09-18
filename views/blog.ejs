@@ -12,13 +12,14 @@
     <form action="/user/logout?_method=DELETE" method="POST">
         <input type="submit" value="Logout" />
     </form>
-    <a href="#">+</a>
     <table>
+        <% for(let i = 0; i < Bucket.length; i++) { %>
         <tr>
             <td> <input type="checkbox"></td>
-            <td>Test2</td>
-            <td> <input type="submit"> </td>
+            <td> <%= Bucket[i].title %> </td>
+            <td> <input type="submit"></td>
         </tr>
+        <% } %>
     </table>
  </div>
 </body>

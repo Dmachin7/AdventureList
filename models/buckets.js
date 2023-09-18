@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 
 const bucketSchema = new mongoose.Schema({
-    listItem: {type: String, required: true},
+    title: {type: String, required: true},
+    moreInfo: {type: String, required: true},
     completed: Boolean,
     owner: String
 })
