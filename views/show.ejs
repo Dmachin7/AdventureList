@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Add a new Item</h1>
-       Title: <input type="text" name="title" value="<%= Bucket.title %>">
-       moreInfo: <textarea name="moreInfo" cols="30" rows="10"><%= Bucket.moreInfo %></textarea>
+       <h2><%= Bucket.title %></h2>
+       <h2>More Info: <%= Bucket.moreInfo %></h2>
         Completed: <input type="checkbox" name="completed"  <%= Bucket.completed ? 'checked' : 'unchecked' %>>
         <a href="/bucketlist/list">Go Back</a>
         <a href="/bucketlist/list/<%=Bucket.id%>/edit">Edit</a>

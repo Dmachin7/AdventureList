@@ -69,6 +69,16 @@ router.post('/list', async (req,res) => {
     }
 })
 
+router.post('/list/:id/edit', async (req,res) => {
+    try{
+        const updatedItem = await BucketList.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        res.redirect('/bucketlist/list/' + updatedItem.id)
+    } catch(err) {
+        console.log("Error", err)
+        res.status(500).send(err)
+    }
+})
+
 router.delete('/list/:id', async (req,res) => {
     try {
         const item = await BucketList.findByIdAndDelete(req.params.id)

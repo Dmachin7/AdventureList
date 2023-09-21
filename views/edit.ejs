@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit Item</h1>
-    <form action="/bucketlist/list/:id" method="POST">
+    <form action="/bucketlist/list/<%=Bucket.id%>/edit" method="POST">
        Title: <input type="text" name="title" value="<%= Bucket.title %>">
        moreInfo: <textarea name="moreInfo" cols="30" rows="10"><%= Bucket.moreInfo %></textarea>
         Completed: <input type="checkbox" name="completed"  <%= Bucket.completed ? 'checked' : 'unchecked' %>>
