@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1>Add a new Item</h1>
+    <h1>Edit Item</h1>
+    <form action="/bucketlist/list/:id" method="POST">
        Title: <input type="text" name="title" value="<%= Bucket.title %>">
        moreInfo: <textarea name="moreInfo" cols="30" rows="10"><%= Bucket.moreInfo %></textarea>
         Completed: <input type="checkbox" name="completed"  <%= Bucket.completed ? 'checked' : 'unchecked' %>>
         <input type="submit" value="Update BucketList">
-        <a href="/bucketlist/list/<%=Bucket.id%>/edit">Edit</a>
+    </form>
 </body>
 </html>
