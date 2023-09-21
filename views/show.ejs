@@ -11,7 +11,7 @@
        Title: <input type="text" name="title" value="<%= Bucket.title %>">
        moreInfo: <textarea name="moreInfo" cols="30" rows="10"><%= Bucket.moreInfo %></textarea>
         Completed: <input type="checkbox" name="completed"  <%= Bucket.completed ? 'checked' : 'unchecked' %>>
-        <input type="submit" value="Update BucketList">
+        <a href="/bucketlist/list">Go Back</a>
         <a href="/bucketlist/list/<%=Bucket.id%>/edit">Edit</a>
 </body>
 </html>

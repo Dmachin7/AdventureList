@@ -22,7 +22,7 @@ router.get('/list', async (req,res) => {
 router.get('/list/:id', async (req,res) => {
     const foundItem = await BucketList.findById(req.params.id)
     res.render('show.ejs', {Bucket: foundItem})
-    
+    console.log(req.session.username.username)
 })
 router.get('/list/:id/edit', async (req,res) => {
     const foundItem = await BucketList.findById(req.params.id)
