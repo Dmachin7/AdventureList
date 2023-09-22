@@ -6,6 +6,7 @@
     <title>AdventureList</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script defer src="/js/app.js"></script>
 </head>
 <body>
 <div class="container">
@@ -13,17 +14,15 @@
     <form action="/user/logout?_method=DELETE" method="POST">
         <input class="logout-button" type="submit" value="Logout" />
     </form>
-    <table class="bucketlist-table">
-        <a class="new-item" href="/bucketlist/new">+</a>
-        <% for(let i = 0; i < Bucket.length; i++) { %>
-        <tr>
-            <td> <a class="bucket-title" href="/bucketlist/list/<%=Bucket[i].id%>"> <%= Bucket[i].title %> </a>
+    <a class="new-item" href="/bucketlist/new">+</a>
+    <% for(let i = 0; i < Bucket.length; i++) { %>
+    <div class="bucketlist-table">
+        <a class="bucket-title" href="/bucketlist/list/<%=Bucket[i].id%>"> <%= Bucket[i].title %> </a>
             <form action="/bucketlist/list/<%=Bucket[i].id%>?_method=DELETE" method="POST">
                 <input class="delete-btn fa fa-trash-o" type="submit" value="DELETE">
-            </form></td>
-        </tr>
-        <% } %>
-    </table>
+            </form>
+    </div>
+    <% } %>
  </div>
 </body>
 </html>
