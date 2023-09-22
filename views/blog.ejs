@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdventureList</title>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="container">
-    <a class="new-item" href="/bucketlist/new">Create a new Item</a>
+
     <form action="/user/logout?_method=DELETE" method="POST">
         <input class="logout-button" type="submit" value="Logout" />
     </form>
     <table class="bucketlist-table">
+        <a class="new-item" href="/bucketlist/new">+</a>
         <% for(let i = 0; i < Bucket.length; i++) { %>
         <tr>
-            <td> <a href="/bucketlist/list/<%=Bucket[i].id%>"> <%= Bucket[i].title %> </a></td>
-            <td><form action="/bucketlist/list/<%=Bucket[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
+            <td> <a class="bucket-title" href="/bucketlist/list/<%=Bucket[i].id%>"> <%= Bucket[i].title %> </a>
+            <form action="/bucketlist/list/<%=Bucket[i].id%>?_method=DELETE" method="POST">
+                <input class="delete-btn fa fa-trash-o" type="submit" value="DELETE">
             </form></td>
         </tr>
         <% } %>
