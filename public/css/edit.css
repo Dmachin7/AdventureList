@@ -1,0 +1,44 @@
+* {
+    font-family: 'Oswald', sans-serif;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+h2 {
+    color: white;
+}
+.title-input {
+    padding: .5rem;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.what-do-input {
+    width: 80vw;
+    padding: .5rem;
+    font-size: 20px;
+}
+.button {
+    padding: .5rem;
+    font-size: .9rem;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.go-back {
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: .5px solid white;
+    padding: .3rem;
+}

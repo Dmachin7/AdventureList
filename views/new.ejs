@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdventureList</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
-    <h1>Add a new Item</h1>
+    <a class="go-back" href="/bucketlist/list">Go Back</a>
+    <div class="container">
     <form action="/bucketlist/list" method="POST">
-       Title: <input type="text" name="title">
-       moreInfo: <textarea name="moreInfo" cols="30" rows="10"></textarea>
-        <input type="submit" value="Create BucketList">
+        <h2 class="title">Title</h2>
+       <input class="title-input" type="text" name="title">
+       <h2 class="what-do">What to Do:</h2>
+       <textarea class="what-do-input" name="moreInfo" cols="30" rows="10"></textarea>
+        <input class="button" type="submit" value="Create BucketList">
     </form>
+</div>
 </body>
 </html>

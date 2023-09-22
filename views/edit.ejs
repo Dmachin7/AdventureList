@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdventureList</title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/edit.css">
 </head>
 <body>
-    <h1>Edit Item</h1>
+    <div class="container">
     <form action="/bucketlist/list/<%=Bucket.id%>/edit" method="POST">
-       Title: <input type="text" name="title" value="<%= Bucket.title %>">
-       moreInfo: <textarea name="moreInfo" cols="30" rows="10"><%= Bucket.moreInfo %></textarea>
-        Completed: <input type="checkbox" name="completed"  <%= Bucket.completed ? 'checked' : 'unchecked' %>>
-        <input type="submit" value="Update BucketList">
+        <h2 class="title">Title</h2>
+        <input class="title-input" type="text" name="title" value="<%= Bucket.title %>">
+        <h2 class="what-do" >What to Do:</h2>
+        <textarea class="what-do-input" name="moreInfo" cols="30" rows="10"><%= Bucket.moreInfo %></textarea>
+        <!-- Completed: <input type="checkbox" name="completed"  <%= Bucket.completed ? 'checked' : 'unchecked' %>> -->
+        <input class="button" type="submit" value="Update BucketList">
     </form>
+</div>
 </body>
 </html>
