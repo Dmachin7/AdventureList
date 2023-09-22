@@ -16,7 +16,7 @@
     </form>
     <a class="new-item" href="/bucketlist/new">+</a>
     <% for(let i = 0; i < Bucket.length; i++) { %>
-    <div class="bucketlist-table">
+    <div data-id="<%=Bucket[i].id%>" class="bucketlist-table">
         <a class="bucket-title" href="/bucketlist/list/<%=Bucket[i].id%>"> <%= Bucket[i].title %> </a>
             <form action="/bucketlist/list/<%=Bucket[i].id%>?_method=DELETE" method="POST">
                 <input class="delete-btn fa fa-trash-o" type="submit" value="X">

@@ -27,4 +27,18 @@ const changeBackgroundImage = () => {
     })
 }
 
+// Get all clickable container elements
+const theContainers = document.querySelectorAll('.bucketlist-table');
+
+theContainers.forEach(container => {
+    container.addEventListener('click', () => {
+        // Get the ID from the data-id attribute
+        const id = container.getAttribute('data-id');
+
+        // Construct the URL with the ID and redirect
+        window.location.href = `/bucketlist/list/${id}`;
+    });
+});
+
+
 changeBackgroundImage()

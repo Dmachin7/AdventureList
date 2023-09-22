@@ -32,20 +32,27 @@
     width: 80%;
     border-radius: 10px;
     margin: 10px auto;
-    box-shadow: -1px 4px 18px 5px rgba(0,0,0,0.45);
     background-color: white;
     overflow-y: auto;
     display: relative;
-    outline: white solid 1px;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(255, 0, 0, 0)), url(https://i.pinimg.com/originals/10/85/9d/10859d48896041068ada4c5a0a3f212a.jpg); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+
+.bucketlist-table:hover{
+    box-shadow: -1px 4px 18px 5px rgba(255, 255, 255, .2);
+    transition: 200ms ease;
 }
 a {
     text-decoration: none;
 }
 .logout-button {
+    color: white;
+    background-color: transparent;
     position: absolute;
     top: 10px;
     left: 10px;
@@ -53,9 +60,14 @@ a {
     margin: 10px;
     border-radius: 10px;
     z-index: 2;
+    cursor: pointer;
+    font-size: 20px;
+}
+.logout-button:hover {
+    outline: white solid 1px;
 }
 .new-item {
-    color: black;
+    color: white;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -63,7 +75,7 @@ a {
     z-index: 2;
     margin: 10px;
     font-size: 30px;
-    background-color: white;
+    background-color: transparent;
 }
 td {
     position: relative;
@@ -88,5 +100,10 @@ margin: 1rem;
     font-size: 10px;
     padding: .5rem;
     margin: 5px;
+    outline: none;
+    border-radius: 10px;
     background-color: transparent;
+}
+.delete-btn:hover {
+    background-color: darkred;
 }
