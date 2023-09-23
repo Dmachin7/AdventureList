@@ -6,6 +6,7 @@ const session = require('express-session')
 
 router.get('/list', async (req,res) => {
     try {
+        console.log(req.session)
         const sessionUsername = req.session.username.username
         console.log(sessionUsername)
         const foundList = await BucketList.find({})
@@ -22,7 +23,7 @@ router.get('/list', async (req,res) => {
 router.get('/list/:id', async (req,res) => {
     const foundItem = await BucketList.findById(req.params.id)
     res.render('show.ejs', {Bucket: foundItem})
-    console.log(req.session.username.username)
+    console.log(req.session.username)
 })
 router.get('/list/:id/edit', async (req,res) => {
     const foundItem = await BucketList.findById(req.params.id)

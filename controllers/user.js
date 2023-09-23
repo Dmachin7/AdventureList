@@ -16,6 +16,9 @@ router.post('/', async (req, res) => {
       req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
       const newUser = await User.create(req.body)
       req.session.currentUser = newUser
+      const sessionUser = req.session.currentUser.username
+      console.log(req)
+      req.session.username = sessionUser
       res.redirect('/bucketlist/list')
     } catch (err) {
       console.log(err)
