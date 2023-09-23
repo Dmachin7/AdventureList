@@ -10,6 +10,9 @@
 <div class="login-container">
   <div class="login">
   <h1 class="login-title">Create an Account</h1>
+  <% if (typeof errorMessage !== 'undefined') { %>
+    <p class="wrong-username"><%= errorMessage %></p>
+<% } %>
 
 
   <form action="/user/" method="POST">

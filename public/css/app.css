@@ -3,7 +3,7 @@
     font-family: 'Oswald', sans-serif;
 }
 body {
-    background-color: white;
+    background-color: black;
     margin: 0 auto;
 }
 .login-title {
@@ -55,7 +55,7 @@ h1 {
 }
 #adventure-begin {
     font-size: 72px;
-    color: black;
+    color: white;
     position: relative;
     margin: 5px;
     top: 0;
@@ -70,7 +70,7 @@ h1 {
     white-space: normal;
 }
 .section1 p {
-color: black;
+color: white;
 margin: 10px;
 font-size: 20px;
 }
@@ -173,10 +173,18 @@ input:focus {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    transition: 200ms ease-in;
+}
+.submit-btn:hover {
+    background-color: white;
+    transition: 200ms ease-in;
 }
 .signup-btn {
     color: white;
 }
-
+.wrong-username {
+    color: red;
+    font-size: 15px;
+}
 
 

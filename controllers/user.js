@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
       res.redirect('/bucketlist/list')
     } catch (err) {
       console.log(err)
-      res.status(500).send('Please try a different username or password.')
+      res.render('newUser.ejs', { errorMessage: 'Username is in use, try another' })
     }
     console.log(req.body)
   })
@@ -37,14 +37,14 @@ router.post('/', async (req, res) => {
           req.session.username = foundUser
           res.redirect('/bucketlist/list')
         } else {
-          res.status(500).send('Username or password does not match or does not exist.')
+          res.render('login.ejs', { errorMessage: 'Username or password does not match.' })
         }
       } else {
-        res.status(500).send('Username or password does not match or does not exist.')
+        res.render('login.ejs', { errorMessage: 'Username or password does not match.' })
       }
     } catch (err) {
       console.log(err)
-      res.status(500).send('Username or password does not match or does not exist.')
+      res.render('login.ejs', { errorMessage: 'Username or password does not match.' })
     }
   })
 

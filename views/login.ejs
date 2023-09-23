@@ -11,6 +11,9 @@
 
   <div class="login">
     <h1 class="login-title">Login</h1>
+    <% if (typeof errorMessage !== 'undefined') { %>
+      <p class="wrong-username"><%= errorMessage %></p>
+  <% } %>
     <form action="/user/login/" method="POST">
       <input class="username" type="text" placeholder="Username" name="username" autocomplete="off"/>
       <input class="password" type="password" placeholder="Password" name="password"/>
