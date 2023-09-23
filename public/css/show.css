@@ -33,7 +33,6 @@ body {
     left: 0;
     top: 200px;
     padding: 10px;
-    border-bottom: white solid 2px;
 }
 .checkbox {
     position: absolute;
@@ -49,6 +48,7 @@ input[type="checkbox"] {
     position: absolute;
     left: 0;
     top: 160px;
+    border-bottom: white solid 2px;
 }
 a {
     color: white;
