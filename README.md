@@ -24,3 +24,8 @@ Being able to add pictures.
 2- Figure out user authentication
 3- Design, Design & Design
 
+# Live Link to the Site:
+
+https://adventurelist-01b3f64537ec.herokuapp.com
+(Please be patient as I am using the free version of heroku and it may take some
+time to load, Thank you!)
