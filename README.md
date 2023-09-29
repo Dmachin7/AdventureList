@@ -1,8 +1,14 @@
 # AdventureList
-
+# This project is stil under development, please follow my progress using the live link below
 # Concept
 
 AdventureList would be an app where one can add bucket list items and write sort of blog posts for each item when completed and add pictures.
+
+# How to Use
+1) Create an account 
+2) Add bucket list items 
+3) Keep track of what you need to do
+4) Enjoy!
 
 # What I need for MVP:
 
