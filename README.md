@@ -10,6 +10,10 @@ AdventureList would be an app where one can add bucket list items and write sort
 3) Keep track of what you need to do
 4) Enjoy!
 
+# Technologies used:
+
+ExpressJS, JavaScript, EJS, MongoDB, CSS, NodeJS
+
 # What I need for MVP:
 
 Ability to Create bucket list items
